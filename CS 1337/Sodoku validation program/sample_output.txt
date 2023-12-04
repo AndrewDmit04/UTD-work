@@ -1,0 +1,8 @@
+input file: sample_input.txt
+373     solved
+400     invalid         row 2 has multiple 3s
+400     invalid         column 5 has multiple 3s
+400     invalid         upper middle has multiple 3s
+5623    valid
+9       invalid         row 1 has multiple 6s
+9       invalid         column 9 has multiple 6s
