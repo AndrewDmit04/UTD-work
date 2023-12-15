@@ -4,7 +4,7 @@ import java.io.FileInputStream;      //file input Stream for reading files
 import java.io.FileOutputStream;     //file output Stream for outputting files 
 import java.io.PrintWriter;          //print writers to write to file 
 import java.util.Scanner;            //scanner for reading output 
-import java.io.IOException;          //for ioExceptions 
+import java.io.IOException;          //for exceptions 
 
 public class Main
 {
@@ -12,8 +12,8 @@ public class Main
 		Scanner scnr = new Scanner(System.in);                      //itilize scanner for user input
         String file_name = scnr.next();                             //get a file name 
         //String file_name = "text.txt";
-		String Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";             //itilize alphabet for printing audotorium
-		Auditorium<Seat> audo = new Auditorium<Seat>(file_name);    //itilize Audotorium class will build empty linked list in the needed shape 
+		String Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";             //utilize alphabet for printing auditorium
+		Auditorium<Seat> audo = new Auditorium<Seat>(file_name);    //utilize Auditorium class will build an empty linked list in the needed shape 
 		FileInputStream in = new FileInputStream(file_name);        //create a file input stream 
 		Scanner fileScanner = new Scanner(in);                      //create a scanner object to read the file 
 		Node<Seat> r = audo.getHead();                              //create a row pointer 
@@ -21,7 +21,7 @@ public class Main
 		    String temp = fileScanner.nextLine();                   //read the line 
 		    Node<Seat> s = r;                                       //set the seat pointer to the current row pointer 
 		    for (int j = 0; j < audo.getSeats(); j++){              //for each seat 
-		        s.setPay(new Seat(i,Alphabet.charAt(j),temp.charAt(j))); //set the payload of the seat pointer to a new seat object, itilized with current charecter in the string
+		        s.setPay(new Seat(i,Alphabet.charAt(j),temp.charAt(j))); //set the payload of the seat pointer to a new seat object, utilized with the current character in the string
 		        s = s.getNext();                                    //move the seat pointer one forward 
 		    }
 		    r = r.getDown();                                        //move row pointer one down
@@ -29,34 +29,34 @@ public class Main
         fileScanner.close();                                        //close the file 
 
 		
-		int user_row = -1, user_A  = -1, user_C = -1, user_S = -1;  //user input for row, and number of Adult, Child and Senior tickets
+		int user_row = -1, user_A  = -1, user_C = -1, user_S = -1;  //user input for a row, and number of Adult, Child, and Senior tickets
 		String user_seat = "";                                      //string for the user input for the seat 
-		String userInput = "";                                      //string for the user input for menu option 
+		String userInput = "";                                      //string for the user input for the menu option 
 		
-        while(!userInput.equals("2")){                     //while user input doesent equal 2 
+        while(!userInput.equals("2")){                     //while user input doesn't equal 2 
             System.out.print("\n1. Reserve Seats\n2. Exit\n");    //print 1out menu
-            if(scnr.hasNext()){                                     //if theres a user input     
+            if(scnr.hasNext()){                                     //if there's a user input     
                 userInput = scnr.nextLine();                        //read in the user input
             }
             else{                                                   //if no user input then break 
                 break; 
             }
-            if(userInput.equals("1")){                              //if user chose one start the booking proccess
+            if(userInput.equals("1")){                              //if user chose one start the booking process
                 printAudo(audo.getHead(), audo.getRows(), audo.getSeats(), Alphabet);                 //print the audotorium 
                 //row number
-                while(true){                                        //ask user for the row number validate only break if a row is displayed
+                while(true){                                        //ask the user for the row number validate only break if a row is displayed
                     System.out.print("Enter row: ");                //prompt user for row
-                    user_row = scnr.nextInt();                      //take a int input from scanner
-                    if(user_row > 0 && user_row <= audo.getRows()){            //if input is above zero and below or equal row size then it is valid
+                    user_row = scnr.nextInt();                      //take an int input from scanner
+                    if(user_row > 0 && user_row <= audo.getRows()){            //if the input is above zero and below or equal row size then it is a valid
                         break;                                      //break if valid
                     }
                     System.out.println("Invalid");                  //if row is not displayed will print invalid 
                 }
                 //seat letter
-                while(true){                                        //ask user fot the seat validate only seats are displayed are valid
+                while(true){                                        //ask the user for the seat to validate that only seats displayed are valid
                     System.out.print("Enter Seat: ");               //prompt user for Seat
                     user_seat = scnr.next();                        //take in a string input
-                    if(checkSeat(user_seat,audo.getSeats(),Alphabet)){        //checkSeat checks to see if a letter is on the screen
+                    if(checkSeat(user_seat,audo.getSeats(),Alphabet)){        //checkout checks to see if a letter is on the screen
                         break;                                      //break if valid 
                     }
                     System.out.println("Invalid");                  //if it isnt will print invalid 
@@ -71,7 +71,7 @@ public class Main
                     catch(Exception e){                              //if we cant then set user_A to -1
                         user_A = -1;
                     }
-                    if(user_A >= 0){                                //if its above zero then we break and its valid
+                    if(user_A >= 0){                                //if it's above zero then we break and it's valid
                         break;
                     }
                     System.out.println("invalid");                  //other wise invalid contunie asking for valid input
@@ -81,7 +81,7 @@ public class Main
                     System.out.print("Enter Number of Child tickets: ");//prompt user for child tickets
                    String temp = scnr.next();                        //take in a int
                     try{
-                        user_C = Integer.parseInt(temp);            //chek if we can covert the number to a int 
+                        user_C = Integer.parseInt(temp);            //check if we can covert the number to a int 
                     }
                     catch(Exception e){ 
                         user_C = -1;                                //if not set the value to -1
@@ -99,7 +99,7 @@ public class Main
                         user_S = Integer.parseInt(temp);            //try to convert to a number 
                     }
                     catch(Exception e){
-                        user_S = -1;                                //if doesent work set the value to -1 
+                        user_S = -1;                                //if doesn't work set the value to -1 
                     }
                     if(user_S >= 0){                                //if above zero break
                         break;
@@ -112,7 +112,7 @@ public class Main
                     bookSeats(audo.getHead(), user_row -1, seatIndex, user_A, user_C, user_S);  //book the seats if avalible
                 }
                 else{
-                    bestAvalibileSeats(audo,user_A,user_C,user_S,Alphabet,scnr);  //else find and ask about best seats in audotorium 
+                    bestAvalibileSeats(audo,user_A,user_C,user_S,Alphabet,scnr);  //else find and ask about best seats in auditorium 
                 }
                 
             
@@ -120,22 +120,22 @@ public class Main
             }
             
         }
-        scnr.close();   //close the scnr object which we dont need anymore 
-        FileOutputStream out = new FileOutputStream("A1.txt"); //create a fileOutputStream
-        PrintWriter printToFile  = new PrintWriter(out);    //create a print writer and set to output stream to output to file
+        scnr.close();   //close the scnr object which we do not need anymore 
+        FileOutputStream out = new FileOutputStream("A1.txt"); //create a file output stream
+        PrintWriter printToFile  = new PrintWriter(out);    //create a print writer and set to an output stream to output to file
         double A = 0 , C = 0, S = 0;    //while outputting count the number of tickets sold 
-        r = audo.getHead();            //set the row to the begining of the audotorium 
-        for(int i = 0; i < audo.getRows(); i++){   //go though each row 
+        r = audo.getHead();            //set the row to the beginning of the auditorium 
+        for(int i = 0; i < audo.getRows(); i++){   //go through each row 
             Node<Seat> s = r;                      //set the row 
-            for(int j = 0; j < audo.getSeats(); j++){ //go though each letter in the sub array
-                printToFile.print(s.getPay().getTicket()); //print the charecter at the pointer to the file 
+            for(int j = 0; j < audo.getSeats(); j++){ //go through each letter in the sub-array
+                printToFile.print(s.getPay().getTicket()); //print the character at the pointer to the file 
                 if(s.getPay().getTicket() == 'A'){          //if the char is A add 1 to A meaning that its one adult ticket
                     A++; 
                 }
-                if(s.getPay().getTicket() == 'C'){          //if the char is C add 1 to C meaning that its one child ticket
+                if(s.getPay().getTicket() == 'C'){          //if the char is C add 1 to C meaning that its one-child ticket
                     C++;
                 }
-                if(s.getPay().getTicket() == 'S'){          //if the char is S add 1 to S meaning that its one child ticket
+                if(s.getPay().getTicket() == 'S'){          //if the char is S add 1 to S meaning that it is one child ticket
                     S++;
                 }
                 s = s.getNext();                             //go to the next seat on that row 
@@ -143,7 +143,7 @@ public class Main
             r = r.getDown();                           //go to the next row
             printToFile.print("\n");            //endline each time we move on to another sub list
         }
-        printToFile.close();                    //close the printwriter to save what we wrote
+        printToFile.close();                    //close the print writer to save what we wrote
         System.out.println("\nTotal Seats: " + audo.getRows() * audo.getSeats());        //display total seats will be the total rows times Seats
         System.out.printf("Total Tickets: %.0f\n",(A+C+S));         //display total tickets sold will be all the Adult plus child plus Senior tickets sold
         System.out.printf("Adult Tickets: %.0f\n", (A));            //dislay adult tickets sold 
@@ -157,13 +157,13 @@ public class Main
 	
     public static void  printAudo(Node<Seat> head,int rows, int seats,String alpha){
 	    System.out.println("\t" + alpha.substring(0,seats)); //print out how many seats there are as alphabet letters 
-	    Node<Seat> r = head;  //set the begining of the row the head, the begining of the audotorium
-	    for(int i = 0; i < rows; i++){         //for each row of the audotorium            
-	        Node<Seat> s = r;     //set the seat to the begining of the row 
+	    Node<Seat> r = head;  //set the beginning of the row the head, the beginning of the auditorium
+	    for(int i = 0; i < rows; i++){         //for each row of the auditorium            
+	        Node<Seat> s = r;     //set the seat to the beginning of the row 
 	        System.out.print((i+1) + "\t"); //print out the row number followed by tab                
 	        for(int j = 0; j < seats; j++){     //for each seat                  
                 if(s.getPay().getTicket() == '.'){  //check if the seat is empty
-                    System.out.print('.');      //if epmpty print '.'
+                    System.out.print('.');      //if empty print '.'
                 }
                 else{
                     System.out.print('#');      //if not empty then print '#'
@@ -193,15 +193,15 @@ public class Main
 	        p = p.getNext(); 
 	    }
 	    for(int i = 0; i < total; i++){     //loop each time until we reach total
-	        if(p == null || p.getPay() == null){ //if p is null or the payLoad is null then the seats are not avalible
+	        if(p == null || p.getPay() == null){ //if p is null or the payLoad is null then the seats are not available
 	            return false; 
 	        }
-	        if(p.getPay().getTicket() != '.'){ //if the seat does not equal '.' then the seats are not avalible 
+	        if(p.getPay().getTicket() != '.'){ //if the seat does not equal '.' then the seats are not available 
 	            return false; 
 	        }
 	        p = p.getNext();               //go to the next seat in the row 
 	    }
-	    return true;    // if each seat is empty and we dont hit the end of the list then the seats are avalible 
+	    return true;    // if each seat is empty and we don't hit the end of the list then the seats are available 
 	}
 	
 	public static void bookSeats(Node<Seat> head, int row, int seat, int A, int C, int S){
@@ -233,22 +233,22 @@ public class Main
  
         double Dist;                          //itilize dist 
 
-        int minX = -1;                        //itilize minX will keep track of the minimum seat index 
-        int minY = -1;                        //itilize minY will keep track of the minimum row index 
+        int minX = -1;                        //utilize minX will keep track of the minimum seat index 
+        int minY = -1;                        //utilize minY will keep track of the minimum row index 
         for(int i = 0; i < audo.getRows(); i++){ //for each row 
             for(int j = 0; j < audo.getSeats(); j++){ //for each seat 
                 int row =  i;  //set the row equal to i 
                 int seat = j;  //set the seat equal to j 
                 double t = total;  //set the total equal to t converts to double for calculation 
-                if(checkAvalible(audo.getHead(),row,seat, total)){ //check if the seats are avalible 
-                    if(minDist == -1){      //if minDist is equal to -1 then asign minDist intial 
-                        minDist = Math.sqrt(Math.pow(((seat + (t/ 2)) - middleX), 2) + Math.pow((row - middleY),2)); //calculation follows the formula based of the middle of the of the avalible seats 
+                if(checkAvalible(audo.getHead(),row,seat, total)){ //check if the seats are available 
+                    if(minDist == -1){      //if minDist is equal to -1 then assign mindist initial 
+                        minDist = Math.sqrt(Math.pow(((seat + (t/ 2)) - middleX), 2) + Math.pow((row - middleY),2)); //calculation follows the formula based on the middle of the available seats 
                         minX = seat; //set the min seat index 
                         minY = row;  //set the max seat index 
                         continue;    //contunie looking for better seats 
                     }
-                    Dist = Math.sqrt(Math.pow(((seat + (t/ 2)) - middleX), 2) + Math.pow((row - middleY),2)); //calculation follows the formula based of the middle of the of the avalible seats 
-                    if(Dist < minDist || (Dist <= minDist && Math.abs(middleY - row) < Math.abs(middleY-minY))){ //if the dist calcualted is less thena the current minDist, also if distances are equal then considers the closest row to the middle 
+                    Dist = Math.sqrt(Math.pow(((seat + (t/ 2)) - middleX), 2) + Math.pow((row - middleY),2)); //calculation follows the formula based on the middle of the of the available seats 
+                    if(Dist < minDist || (Dist <= minDist && Math.abs(middleY - row) < Math.abs(middleY-minY))){ //if the dist calculated is less than the current minDist, also if distances are equal then considers the closest row to the middle 
                         minDist = Dist; //change minDist to the new calculated Dist 
                         minX = seat;  //set min seat index 
                         minY = row;   //set min row index 
@@ -256,7 +256,7 @@ public class Main
                 }
             } 
         }
-        if(minDist == -1){ //if minDist is -1 then there are no seats avalible 
+        if(minDist == -1){ //if minDist is -1 then there are no seats available 
             System.out.println("No seats are avalible.");
             return;
         }
@@ -264,12 +264,12 @@ public class Main
             System.out.println((minY+ 1) + "" + (Alhpa.charAt(minX))); //print the min row and min letter to the user
         }
         else{ //if the total is above 1 then it will be a range of numbers 
-            System.out.println((minY+ 1) + "" + (Alhpa.charAt(minX) + "-" + (minY + 1) + "" + Alhpa.charAt(minX + total -1 ))); //print out the range avalible to the user
+            System.out.println((minY+ 1) + "" + (Alhpa.charAt(minX) + "-" + (minY + 1) + "" + Alhpa.charAt(minX + total -1 ))); //print out the range available to the user
         }
         
         System.out.print("Would you like to reserve 'Y' for yes and 'N' for no:");  //prompt user if they would like to book 
         String booking = scnr.next();  //take a string input
-        if(booking.equals("Y")){    //if yes then book seats if not yes then go back to main menu
+        if(booking.equals("Y")){    //if yes then book seats if not yes then go back to the main menu
             bookSeats(audo.getHead(), minY, minX,A,C,S); //book the seats 
         }
     }
