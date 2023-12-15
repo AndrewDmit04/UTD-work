@@ -1,0 +1,66 @@
+################Input-file#############:
+.AAAAAAAA....AAAAAA.
+.CCS..CSS.A.AAAA.AC.
+AAC.SS.ACCC..AACCSS.
+.ACCSSAACS.S.ASAAAS.
+.AA.SS.CC....S.A.SSA
+
+################Demo####################:
+1. Reserve Seats
+2. Exit
+1
+
+1. Reserve Seats
+2. Exit
+        ABCDEFGHIJKLMNOPQRST
+1       .########....######.
+2       .###..###.#.####.##.
+3       ###.##.####..######.
+4       .#########.#.######.
+5       .##.##.##....#.#.###
+Enter row: 1
+Enter Seat: A
+Enter Number of Adult tickets: 2 
+Enter Number of Child tickets: 0
+Enter Number of Senior tickets: 0
+3L-3M
+Would you like to reserve 'Y' for yes and 'N' for no:Y
+
+1. Reserve Seats
+2. Exit
+1
+
+1. Reserve Seats
+2. Exit
+        ABCDEFGHIJKLMNOPQRST
+1       .########....######.
+2       .###..###.#.####.##.
+3       ###.##.############.
+4       .#########.#.######.
+5       .##.##.##....#.#.###
+Enter row: 1
+Enter Seat: J
+Enter Number of Adult tickets: 2
+Enter Number of Child tickets: 1
+Enter Number of Senior tickets: 1
+
+1. Reserve Seats
+2. Exit
+2
+
+1. Reserve Seats
+2. Exit
+
+Total Seats: 100
+Total Tickets: 75
+Adult Tickets: 40
+Child Tickets: 16
+Senior Tickets: 19
+Total Sales: $622.50
+
+#########Output-file##############:
+.AAAAAAAAAACSAAAAAA.
+.CCS..CSS.A.AAAA.AC.
+AAC.SS.ACCCAAAACCSS.
+.ACCSSAACS.S.ASAAAS.
+.AA.SS.CC....S.A.SSA
