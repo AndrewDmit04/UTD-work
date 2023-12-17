@@ -1,9 +1,0 @@
-XX               20  
-CMXLVII          947 
-CMLXXXIV         984 
-MCDLXIX          1469
-MDV              1505
-MDCCII           1702
-MMCCLXVI         2266
-MMMCCCLIV        3354
-MMMDCXX          3620
