@@ -1,0 +1,61 @@
+#################Cutomer.dat file#################################
+60566 Cinderella Princess 3.15
+90120 Prince Charming 40.34
+79034 Fairy Godmother 23.86
+5523 Jaq Mouse 47.15
+71479 Gus Mouse 38.31
+270 Lady Tremaine 49.99
+10740 Drizella Tremaine 39.50
+64150 Anastasia Tremaine 46.49
+98522 Lucifer Cat 28.11
+24990 Grand Duke 25.29
+##################################################################
+
+#################Prefferd.dat file################################
+85307 Simba Lion 190.80 15%
+40220 Mufasa Lion 200.00 0
+17920 Nala Lion 350.00 3
+52761 Rafiki Gibbon 180.25 15%
+51111 Timon Meerkat 111.03 10%
+39988 Pumba Warthog 1047.23 5
+37849 Scar Lion 154.35 15%
+91276 Zazu Hornbill 295.00 7
+80820 Banzai Hyena 325.67 3
+7471 Ed Hyena 94.12 5%
+##################################################################
+
+############### Orders.dat file###################################
+24990 M punch 0 4
+60566 S tea 0.03 1
+51111 S punch 0.02 3
+270 L soda 0 5
+85307 M soda 0 12
+7471 M soda 0.02 7
+##################################################################
+
+After the program is run:
+#################Cutomer.dat file#################################
+60566 Cinderella Princess 6.29
+90120 Prince Charming 40.34
+79034 Fairy Godmother 23.86
+5523 Jaq Mouse 47.15
+71479 Gus Mouse 38.31
+10740 Drizella Tremaine 39.50
+64150 Anastasia Tremaine 46.49
+98522 Lucifer Cat 28.11
+24990 Grand Duke 37.29
+##################################################################
+
+#################Prefferd.dat file################################
+85307 Simba Lion 231.60 6
+40220 Mufasa Lion 200.00 0
+17920 Nala Lion 350.00 3
+52761 Rafiki Gibbon 180.25 15%
+51111 Timon Meerkat 118.94 10%
+39988 Pumba Warthog 1047.23 5
+37849 Scar Lion 154.35 15%
+91276 Zazu Hornbill 295.00 7
+80820 Banzai Hyena 325.67 3
+7471 Ed Hyena 129.56 10%
+270 Lady Tremaine 80.39 5%
+##################################################################
