@@ -9,9 +9,12 @@ public class Main
 {
 	public static void main(String[] args) throws IOException{
 	    Scanner inputFiles = new Scanner(System.in);                 //declare a system Scanner to read input 
+	    System.out.print("Customer file: ");
 	    String file1 = inputFiles.next();                            //read in the first file name 
-	    String file2 = inputFiles.next();                            //read in the second file name 
-	    String file3 = inputFiles.next();                            //read in the third file name 
+	    System.out.print("Prefferd file: ");
+            String file2 = inputFiles.next();                            //read in the second file name 
+	    System.out.print("orders file: ");
+            Strng file3 = inputFiles.next();                            //read in the third file name 
 	    
 	    boolean file_opened = true;                                 //declare check if the file opened boolean
 ////////////////////////////////inputting data from first file/////////////////////////////////////////////////////
